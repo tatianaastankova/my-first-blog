@@ -3,15 +3,20 @@
         <title> Tanya's blog</title>
     </head>
     <body>
-        <h1>if you like pina coladas</h1>
-        <h2>and getting caught in the rain</h2>
-        <h3>if you're not into yoga</h3>
-        <p> and you have half a brain <br> <strong> if you like making love at midnight</strong><br><strong>in the dunes on the cape</strong><br> <em>i'm the one that you've looked for</em><br> write to me and escape</p>
+{{posts}}
+{% for post in posts %}
+    {{ post }}
+{% endfor %}
+<div>
+        <h1><a href="/">tanyas blog</a></h1>
+    </div>
+    
+    {% for post in posts %}
         <div>
-            <p>
-              <a href="http://instagram.com/tanya_jpg">instagram</a>
+            <p>published: {{ post.published_date }}</p>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
 
-                </p
-                ></div>
-    </body>
-</html>
+</body>
